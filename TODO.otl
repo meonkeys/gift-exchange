@@ -1,0 +1,15 @@
+[_] change data format to YAML
+[_] when displaying picks, add some presentation
+	[X] artificially pause between picks or actually do lots of randomization
+	[_] make the user press a button to perform the next pick
+	[_] make a GUI
+		[_] show photos of faces
+[_] data integrity
+	[_] make sure noone is listed twice in participants[]
+	[_] confirm that everyone in participants[] is in last_years_pairs[]
+	[_] make sure last_years_pairs[] is valid
+		[_] each person gives to one other person
+		[_] each person gets a gift
+	[_] validate families[]
+[_] present stats over time
+	[_] A gave to B x times
