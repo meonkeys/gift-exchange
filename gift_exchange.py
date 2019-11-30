@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 #############
 # Gift Exchange Name Matcher
@@ -11,20 +11,30 @@
 # 5. participants receive one gift only
 #############
 
+import importlib
 import libgiftex
 import pprint
 import random
 import sys
 import time
 
+foundHalo = importlib.util.find_spec('halo')
+if foundHalo:
+    from halo import Halo
+
 if __name__ == '__main__':
     from data import participants, last_years_pairs, families
 
     chosen = []
 
-    print "Please Wait! The robot is picking numbers out of a hat..."
-    print ""
-    time.sleep(5)
+    pleaseWait = 'Please Wait! The robot is picking numbers out of a hat...'
+    if foundHalo:
+        with Halo(text=pleaseWait, spinner='earth'):
+            time.sleep(5)
+    else:
+        print(pleaseWait)
+        time.sleep(5)
+
     while len(chosen) != len(participants):
         givers = libgiftex.possible_givers(participants, chosen)
         # if we omit randomization here, our "abort/retry" (below) may fail,
@@ -57,14 +67,22 @@ if __name__ == '__main__':
     f.write("participants = ")
     f.write(pprint.pformat(participants))
     f.write("\n\n")
+    f.write("# OK to include folks from last year not in this year\n")
     f.write("last_years_pairs = ")
     f.write(pprint.pformat(chosen))
     f.write("\n\n")
+    f.write("# groups of people that shouldn't give to one another\n")
     f.write("families = ")
     f.write(pprint.pformat(families))
     f.write("\n")
     f.close()
 
     for giver, recipient in chosen:
-        print "%s gives to %s" % (giver, recipient)
-        time.sleep(5)
+        print("{} gives to {}".format(giver, recipient))
+        shuffling = 'Shuffling...'
+        if foundHalo:
+            with Halo(text=shuffling, spinner='moon'):
+                time.sleep(5)
+        else:
+            print(shuffling)
+            time.sleep(5)

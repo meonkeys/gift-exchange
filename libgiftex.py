@@ -2,16 +2,17 @@ debug_on = False
 debug_fine_on = False
 
 from copy import copy
+import sys
 
 def debug(msg):
     if debug_on:
-        print msg
+        print(msg, file=sys.stderr)
     else:
         pass
 
 def debug_fine(msg):
     if debug_fine_on:
-        print msg
+        print(msg, file=sys.stderr)
     else:
         pass
 

@@ -9,6 +9,7 @@ participants = ['Alvin',
  'Richard',
  'Samuel']
 
+# OK to include folks from last year not in this year
 last_years_pairs = [('Alvin', 'Richard'),
  ('Arno', 'Melanie'),
  ('Azula', 'Arno'),
@@ -20,6 +21,7 @@ last_years_pairs = [('Alvin', 'Richard'),
  ('Richard', 'Omari'),
  ('Samuel', 'Edgar')]
 
+# groups of people that shouldn't give to one another
 families = ['Alvin',
  'Arno',
  ('Azula', 'Betty', 'Edgar', 'Omari'),
