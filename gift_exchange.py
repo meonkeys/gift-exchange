@@ -18,6 +18,8 @@ import random
 import sys
 import time
 
+_suspensefulDelay = 5
+
 foundHalo = importlib.util.find_spec('halo')
 if foundHalo:
     from halo import Halo
@@ -30,10 +32,10 @@ if __name__ == '__main__':
     pleaseWait = 'Please Wait! The robot is picking numbers out of a hat...'
     if foundHalo:
         with Halo(text=pleaseWait, spinner='earth'):
-            time.sleep(5)
+            time.sleep(_suspensefulDelay)
     else:
         print(pleaseWait)
-        time.sleep(5)
+        time.sleep(_suspensefulDelay)
 
     while len(chosen) != len(participants):
         givers = libgiftex.possible_givers(participants, chosen)
@@ -82,7 +84,7 @@ if __name__ == '__main__':
         shuffling = 'Shuffling...'
         if foundHalo:
             with Halo(text=shuffling, spinner='moon'):
-                time.sleep(5)
+                time.sleep(_suspensefulDelay)
         else:
             print(shuffling)
-            time.sleep(5)
+            time.sleep(_suspensefulDelay)
