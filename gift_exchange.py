@@ -20,9 +20,11 @@ import time
 
 _suspensefulDelay = 5
 
-foundHalo = importlib.util.find_spec('halo')
-if foundHalo:
+try:
     from halo import Halo
+    foundHalo = True
+except ImportError:
+    foundHalo = False
 
 if __name__ == '__main__':
     from data import participants, last_years_pairs, families
