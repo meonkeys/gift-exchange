@@ -22,7 +22,6 @@ last_years_pairs = [('Alvin', 'Richard'),
  ('Samuel', 'Edgar')]
 
 # groups of people that shouldn't give to one another
-families = ['Alvin',
- 'Arno',
+families = [
  ('Azula', 'Betty', 'Edgar', 'Omari'),
  ('Martin', 'Melanie', 'Richard', 'Samuel')]
