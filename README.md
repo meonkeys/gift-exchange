@@ -31,6 +31,6 @@ Logic for who can give to whom are found in `libgiftex.py`. They are:
 
 ## Copyright, License
 
-Copyright (C) 2016-2020 Adam Monsen
+Copyright (C) 2010-2023 Adam Monsen
 
 Available free of charge under the AGPLv3. See COPYING for the full license text.
