@@ -11,6 +11,7 @@ Required:
 Optional:
 
 * [halo](https://pypi.org/project/halo/) - for fancy "waiting..." spinners
+    * Install on Debian-like operating systems with `sudo apt install python3-halo`
 
 ## Usage
 
